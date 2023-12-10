@@ -4,17 +4,17 @@ const serverless = require('serverless-http')
 var cors = require('cors') 
 require('dotenv').config()
 const corsOptions ={
-  origin:'*', 
+  origin:'https://master--akshat-xerocodee-assignment.netlify.app/', 
   credentials:true,            
   optionSuccessStatus:200,
 }
 
-app.use(cors(corsOptions))
- 
+
 connectToMongo();
 const app = express()
 const router = express.Router();
 const port = process.env.PORT || 8888
+app.use(cors(corsOptions))
 
 app.use(cors())
 app.use(express.json())
