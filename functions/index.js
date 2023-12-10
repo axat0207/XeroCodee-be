@@ -15,8 +15,8 @@ app.use(express.json())
 
 app.use('/api/auth', require('../routes/auth'))
 
-// app.use('/.netlify/functions/api', router)
-// module.export.handler = serverless(app)
+app.use('/.netlify/functions/api', router)
+module.export.handler = serverless(app)
 
 app.listen(port, () => {
   console.log(`XeroCodee backend listening at http://localhost:${port}`)
