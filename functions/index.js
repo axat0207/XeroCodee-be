@@ -3,7 +3,14 @@ const express = require('express')
 const serverless = require('serverless-http')
 var cors = require('cors') 
 require('dotenv').config()
+const corsOptions ={
+  origin:'*', 
+  credentials:true,            
+  optionSuccessStatus:200,
+}
 
+app.use(cors(corsOptions))
+ 
 connectToMongo();
 const app = express()
 const router = express.Router();
